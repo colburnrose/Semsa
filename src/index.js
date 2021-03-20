@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+// CSS: Imports
+import "bootstrap/dist/css/bootstrap.css";
 
 import { createStore } from "redux";
 import rootReducer from "./reducers/index";

@@ -11,7 +11,7 @@ const TopNav = () => (
       Login
     </Link>
     <Link className="nav-link" to="/register">
-      Register
+      Sign up
     </Link>
   </div>
 );
