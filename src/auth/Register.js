@@ -1,60 +1,16 @@
 import React, { useState } from "react";
+import RegisterForm from "../components/register/RegisterForm";
 import "./Register.css";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import {
-  FacebookLoginButton,
-  GithubLoginButton,
-} from "react-social-login-buttons";
 
 const Register = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    alert("A new user was registered");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.table({ name, email, password });
   };
-
-  const registerForm = () => (
-    <Form className="register-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <FormGroup>
-          <label>UserName</label>
-          <input
-            type="name"
-            className="form-control"
-            placeholder="username"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <label>Email</label>
-          <input
-            type="email"
-            className="form-control"
-            placeholder="email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </FormGroup>
-        <FormGroup>
-          <label>Password</label>
-          <input
-            type="password"
-            className="form-control"
-            placeholder="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </FormGroup>
-        <Button className="btn-lg btn-block" color="info">
-          Signup
-        </Button>
-        <Button className="btn-lg btn-dark btn-block">Cancel</Button>
-      </div>
-    </Form>
-  );
 
   return (
     <>
@@ -66,7 +22,17 @@ const Register = () => {
       </div>
       <div className="container">
         <div className="row">
-          <div className="col-md-6 offset-md-3">{registerForm()}</div>
+          <div className="col-md-6 offset-md-3">
+            <RegisterForm
+              handleSubmit={handleSubmit}
+              name={name}
+              setName={setName}
+              email={email}
+              setEmail={setEmail}
+              password={password}
+              setPassword={setPassword}
+            />
+          </div>
         </div>
       </div>
     </>

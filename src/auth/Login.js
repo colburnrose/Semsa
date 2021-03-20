@@ -16,8 +16,8 @@ const Login = () => {
     <Form className="login-form" onSubmit={handleSubmit}>
       <div className="form-group">
         <FormGroup>
-          <label>Username or email address</label>
-          <input
+          <Label>Username or email address</Label>
+          <Input
             type="email"
             className="form-control"
             placeholder="Email"
@@ -26,8 +26,8 @@ const Login = () => {
           />
         </FormGroup>
         <FormGroup>
-          <label>Password</label>
-          <input
+          <Label>Password</Label>
+          <Input
             type="password"
             className="form-control"
             placeholder="Password"
@@ -43,9 +43,9 @@ const Login = () => {
         </div>
         <GithubLoginButton />
         <div className="text-center">
-          <Link>Sign up</Link>
+          <Link to="/register">Sign up</Link>
           <span className="p-2">|</span>
-          <Link>Forgot Password</Link>
+          <Link to="/forgotpassword">Forgot Password</Link>
         </div>
       </div>
     </Form>
